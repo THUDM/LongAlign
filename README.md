@@ -4,6 +4,7 @@
 <p align="center">
     🤗 <a href="https://huggingface.co/datasets/THUDM/LongAlign-10k" target="_blank">HF Repo</a> • 📃 <a href="https://arxiv.org/" target="_blank">Paper</a>
 </p>
+阅读[中文](README_zh.md)版本
 
 **LongAlign** is the first full recipe for LLM alignment on long context. We propose the **LongAlign-10k** dataset, containing 10,000 long instruction data of 8k-64k in length. We investigate on trianing strategies, namely **packing (with loss weighting) and sorted batching**, which are all implemented in our code. For real-world long context evaluation, we introduce **Chat-LongBench** that evaluates the instruction-following capability on queries of 10k-100k length.
 
