@@ -3,6 +3,7 @@
 <p align="center">
     🤗 <a href="https://huggingface.co/datasets/THUDM/LongAlign-10k" target="_blank">HF 仓库</a> • 📃 <a href="https://arxiv.org/" target="_blank">论文</a>
 </p>
+
 Read this in [English](README.md).
 
 **LongAlign** 是首个针对长上下文的大型语言模型（LLM）对齐的全面方法。我们提出了 **LongAlign-10k** 数据集，包含 10,000 条长指令数据，长度在 8k-64k 之间。我们研究了训练策略，即 **打包（带有损失加权）和排序批处理**，这些都在我们的代码中实现了。为了评估真实世界长上下文的性能，我们引入了 **Chat-LongBench**，它能够评估对 10k-100k 长度查询的指令遵循能力。
