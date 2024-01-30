@@ -71,7 +71,7 @@ For Llama-based models, we also provide a [llama_flash_attn_monkey_patch.py](htt
 
 Here is the full list of models we released:
 
-|Model|Huggingface Repo|Description|
+|Model|HF Repo|Description|
 |---|---|---|
 |**LongAlign-6B-64k-base**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-6B-64k-base) | **ChatGLM3-6B** with an extended 64k context window |
 |**LongAlign-6B-64k**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-6B-64k) | Chat model by LongAlign training on LongAlign-6B-64k-base|
