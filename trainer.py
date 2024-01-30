@@ -3,12 +3,10 @@ from transformers import Trainer
 import contextlib
 import functools
 import glob
-import inspect
 import math
 import os
 import random
 import re
-import shutil
 import sys
 import time
 import warnings
@@ -19,8 +17,6 @@ from typing import TYPE_CHECKING, Any, Callable, Dict, List, Optional, Tuple, Un
 import numpy as np
 import torch
 import torch.distributed as dist
-from huggingface_hub import Repository, create_repo
-from packaging import version
 from torch import nn
 from torch.utils.data import DataLoader, Dataset, SequentialSampler
 from transformers.training_args import OptimizerNames, ParallelMode, TrainingArguments
