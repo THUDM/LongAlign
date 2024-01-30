@@ -6,8 +6,6 @@
 
 **LongAlign** is the first full recipe for LLM alignment on long context. We propose the **LongAlign-10k** dataset, containing 10,000 long instruction data of 8k-64k in length. We investigate on trianing strategies, namely **packing (with loss weighting) and sorted batching**, which are all implemented in our code. For real-world long context evaluation, we introduce **Chat-LongBench** that evaluates the instruction-following capability on queries of 10k-100k length.
 
-![](assets/leaderboard.png)
-
 ## 🔍 Table of Contents
 - [⚙️ Data Preparation](#data-preparation)
 - [🖥️ LongAlign Training](#longalign-training)
@@ -88,7 +86,9 @@ Chat-LongBench is the first benchmark for assessing long context alignment, feat
 ```bash
 python eval.py --model {model_path} --max_length {max_length}
 ```
-`model_path` can either be your local model path or a Hugging Face model path.
+`model_path` can either be your local model path or a Hugging Face model path. Here is the leaderboard on Chat-LongBench:
+
+![](assets/leaderboard.png)
 
 <a name="citation"></a>
 ## 📝 Citation
