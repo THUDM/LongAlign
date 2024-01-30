@@ -93,6 +93,8 @@ python eval.py --model {model_path} --max_length {max_length}
 
 ![](assets/leaderboard.png)
 
+我们也欢迎您提交您的模型预测结果或测试结果。我们在计划发布一个更加正式的排行榜。
+
 <a name="citation"></a>
 ## 📝 引用
 

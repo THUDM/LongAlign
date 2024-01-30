@@ -93,6 +93,8 @@ python eval.py --model {model_path} --max_length {max_length}
 
 ![](assets/leaderboard.png)
 
+You are also welcome to submit your model's test predictions or results to us. We are planning to release a more formal leaderboard.
+
 <a name="citation"></a>
 ## 📝 Citation
 
