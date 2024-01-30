@@ -1,3 +1,4 @@
+![](assets/LongAlign-logo.gif)
 # LongAlign: A Thorough Recipe for Long Context Alignment
 
 <p align="center">
