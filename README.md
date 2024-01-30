@@ -7,12 +7,12 @@
 
 阅读[中文](README_zh.md)版本
 
-**LongAlign** is the first full recipe for LLM alignment on long context. We propose the **LongAlign-10k** dataset, containing 10,000 long instruction data of 8k-64k in length. We investigate on trianing strategies, namely **packing (with loss weighting) and sorted batching**, which are all implemented in our code. For real-world long context evaluation, we introduce **Chat-LongBench** that evaluates the instruction-following capability on queries of 10k-100k length.
+**LongAlign** is the first full recipe for LLM alignment on long context. We propose the **LongAlign-10k** dataset, containing 10,000 long instruction data of 8k-64k in length. We investigate on trianing strategies, namely **packing (with loss weighting) and sorted batching**, which are all implemented in our code. For real-world long context evaluation, we introduce **LongBench-Chat** that evaluates the instruction-following capability on queries of 10k-100k length.
 
 ## 🔍 Table of Contents
 - [⚙️ Data Preparation](#data-preparation)
 - [🖥️ LongAlign Training](#longalign-training)
-- [📊 Chat-LongBench Evaluation](#chat-longbench-evaluation)
+- [📊 LongBench-Chat Evaluation](#longbench-chat-evaluation)
 - [📝 Citation](#citation)
 
 <a name="data-preparation"></a>
@@ -67,7 +67,7 @@ query = open("assets/paper.txt").read() + "\n\nPlease summarize the paper."
 response, history = model.chat(tokenizer, query, history=[], max_new_tokens=512, temperature=1)
 print(response)
 ```
-For Llama-based models, we also provide a [llama_flash_attn_monkey_patch.py](https://github.com/THUDM/LongAlign/blob/main/Chat-LongBench/llama_flash_attn_monkey_patch.py) for utilization of FlashAttention-2 to save memory for inference on long sequences.
+For Llama-based models, we also provide a [llama_flash_attn_monkey_patch.py](https://github.com/THUDM/LongAlign/blob/main/LongBench-Chat/llama_flash_attn_monkey_patch.py) for utilization of FlashAttention-2 to save memory for inference on long sequences.
 
 ### All available models
 
@@ -83,13 +83,13 @@ Here is the full list of models we released:
 |**LongAlign-13B-64k**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-13B-64k) | Chat model by LongAlign training on LongAlign-13B-64k-base|
 |**ChatGLM3-6B-128k**| [🤗 HF Repo](https://huggingface.co/THUDM/chatglm3-6b-128k) | **ChatGLM3-6B** with a 128k context window|
 
-<a name="chat-longbench-evaluation"></a>
-## 📊 Chat-LongBench Evaluation
-Chat-LongBench is the first benchmark for assessing long context alignment, featuring real user queries of 10k-100k in length. The dataset and evaluation code are available under `Chat-LongBench/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator. Run
+<a name="longbench-chat-evaluation"></a>
+## 📊 LongBench-Chat Evaluation
+LongBench-Chat is the first benchmark for assessing long context alignment, featuring real user queries of 10k-100k in length. The dataset and evaluation code are available under `LongBench-Chat/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator. Run
 ```bash
 python eval.py --model {model_path} --max_length {max_length}
 ```
-`model_path` can either be your local model path or a Hugging Face model path. Here is the leaderboard on Chat-LongBench:
+`model_path` can either be your local model path or a Hugging Face model path. Here is the leaderboard on LongBench-Chat:
 
 ![](assets/leaderboard.png)
 

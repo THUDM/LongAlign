@@ -6,12 +6,12 @@
 
 Read this in [English](README.md).
 
-**LongAlign** 是首个大语言模型（LLM）针对长上下文对齐的全面方法。我们提出了 **LongAlign-10k** 数据集，包含 10,000 条长指令数据，长度在 8k-64k 之间。我们研究了训练策略，即 **packing (with loss weighting)** 和 **sorted batching**，这些都实现在了我们的代码中。为了评估真实世界中模型长上下文的性能，我们引入了 **Chat-LongBench**，它能够评估LLM对 10k-100k 长度任务的指令遵循能力。
+**LongAlign** 是首个大语言模型（LLM）针对长上下文对齐的全面方法。我们提出了 **LongAlign-10k** 数据集，包含 10,000 条长指令数据，长度在 8k-64k 之间。我们研究了训练策略，即 **packing (with loss weighting)** 和 **sorted batching**，这些都实现在了我们的代码中。为了评估真实世界中模型长上下文的性能，我们引入了 **LongBench-Chat**，它能够评估LLM对 10k-100k 长度任务的指令遵循能力。
 
 ## 🔍 目录
 - [⚙️ 数据准备](#data-preparation)
 - [🖥️ LongAlign 训练](#longalign-training)
-- [📊 Chat-LongBench 评估](#chat-longbench-evaluation)
+- [📊 LongBench-Chat 评估](#longbench-chat-evaluation)
 - [📝 引用](#citation)
 
 <a name="data-preparation"></a>
@@ -67,7 +67,7 @@ query = open("assets/paper.txt").read() + "\n\n请总结这篇论文。"
 response, history = model.chat(tokenizer, query, history=[], max_new_tokens=512, temperature=1)
 print(response)
 ```
-对于基于 Llama 的模型，我们还提供了 [llama_flash_attn_monkey_patch.py](https://github.com/THUDM/LongAlign/blob/main/Chat-LongBench/llama_flash_attn_monkey_patch.py)，以便在长序列推理时利用 FlashAttention-2 以节省显存。
+对于基于 Llama 的模型，我们还提供了 [llama_flash_attn_monkey_patch.py](https://github.com/THUDM/LongAlign/blob/main/LongBench-Chat/llama_flash_attn_monkey_patch.py)，以便在长序列推理时利用 FlashAttention-2 以节省显存。
 
 ### 所有可用模型
 
@@ -83,13 +83,13 @@ print(response)
 |**LongAlign-13B-64k**| [🤗 HF 仓库](https://huggingface.co/THUDM/LongAlign-13B-64k) | 基于 LongAlign 在 LongAlign-13B-64k-base 上训练的 chat 模型 |
 |**ChatGLM3-6B-128k**| [🤗 HF 仓库](https://huggingface.co/THUDM/chatglm3-6b-128k) | **ChatGLM3-6B** 上下文窗口扩展到 128k|
 
-<a name="chat-longbench-evaluation"></a>
-## 📊 Chat-LongBench 评估
-Chat-LongBench 是首个用于评估长上下文对齐的基准测试，问题都来源于真实用户提问，测试数据长度在 10k-100k 之间。数据集和评估代码在 `Chat-LongBench/` 下。记得在 `eval.py` 中配置您的 OpenAI API 密钥，因为我们采用 GPT-4 作为评估器。运行
+<a name="longbench-chat-evaluation"></a>
+## 📊 LongBench-Chat 评估
+LongBench-Chat 是首个用于评估长上下文对齐的基准测试，问题都来源于真实用户提问，测试数据长度在 10k-100k 之间。数据集和评估代码在 `LongBench-Chat/` 下。记得在 `eval.py` 中配置您的 OpenAI API 密钥，因为我们采用 GPT-4 作为评估器。运行
 ```bash
 python eval.py --model {model_path} --max_length {max_length}
 ```
-`model_path` 可以是您的本地模型路径或 Hugging Face 模型路径。这是 Chat-LongBench 上的排行榜：
+`model_path` 可以是您的本地模型路径或 Hugging Face 模型路径。这是 LongBench-Chat 上的排行榜：
 
 ![](assets/leaderboard.png)
 
