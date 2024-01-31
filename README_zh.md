@@ -56,7 +56,7 @@ python sort_and_group.py --group_size 8 --train_file ./data/chatglm/10k
 
 我们在 `scripts/` 下提供了 ChatGLM3 和 Llama-2 模型系列的训练脚本。请调整 `--model_name_or_path`、`--train_file` 和 `--output_dir` 以匹配您的模型路径、数据路径和输出路径。请使用至少有 64k 上下文窗口长度的基座模型。我们发布了三个 **基座模型**，上下文窗口扩展到 64k：[LongAlign-6B-64k-base](https://huggingface.co/THUDM/LongAlign-6B-64k-base)、[LongAlign-7B-64k-base](https://huggingface.co/THUDM/LongAlign-7B-64k-base) 和 [LongAlign-13B-64k-base](https://huggingface.co/THUDM/LongAlign-13B-64k-base)。
 
-对于 packing 训练，请修改*注意力计算*以支持传入标记了每个序列在 pack 中起止位置的 1D 注意力掩码，以及*模型前向计算*函数以支持 loss weighting。我们为 ChatGLM3 模型提供了此类修改的示例，在 [modeling_chatglm.py](https://github.com/THUDM/LongAlign/blob/main/modeling_chatglm.py) 中的 `CoreAttention.forward` 和 `ChatGLMForConditionalGeneration.forward`。您可以直接使用此文件作为 ChatGLM 训练中的模型文件。我们很快将发布针对 Llama 的补丁代码。根据我们论文中的实验结果，我们推荐对 ChatGLM 训练使用 *packing+loss weighting*，对 Llama 训练使用 *sorted batching*。
+对于 packing 训练，请修改*注意力计算*以支持传入标记了每个序列在 pack 中起止位置的 1D 注意力掩码，以及*模型前向计算*函数以支持 loss weighting。我们为 ChatGLM3 模型提供了此类修改的示例，在 [modeling_chatglm.py](https://github.com/THUDM/LongAlign/blob/main/modeling_chatglm.py) 中的 `CoreAttention.forward` 和 `ChatGLMForConditionalGeneration.forward`。您可以直接使用此文件作为 ChatGLM 训练中的模型文件。我们也提供了 Llama 的训练代码，如果要复现我们的结果，请使本 Repo 中的 [modeling_llama.py](https://github.com/THUDM/LongAlign/blob/main/modeling_llama.py) 作为模型文件。根据我们论文中的实验结果，我们推荐对 ChatGLM 训练使用 *packing+loss weighting*，对 Llama 训练使用 *sorted batching*。
 
 ### 模型部署
 我们发布了四个使用 LongAlign 训练的 **chat 模型**：[LongAlign-6B-64k](https://huggingface.co/THUDM/LongAlign-6B-64k)（基于 *ChatGLM3-6B*）、[LongAlign-7B-64k](https://huggingface.co/THUDM/LongAlign-7B-64k)（基于 *Llama-2-7B*）、[LongAlign-13B-64k](https://huggingface.co/THUDM/LongAlign-13B-64k)（基于 *Llama-2-13B*）和 [ChatGLM3-6B-128k](https://huggingface.co/THUDM/chatglm3-6b-128k)。您可以用这个 demo 代码来尝试使用模型来总结我们的论文，或询问有关的任何问题：
@@ -104,9 +104,6 @@ python eval.py --model {model_path} --max_length {max_length}
 我们还提供了在“大海捞针”测试下评估HuggingFace模型的代码，位于`Needle_test/`目录下。有关更多信息，请参阅其 [README.md](https://github.com/THUDM/LongAlign/blob/main/Needle_test/README.md)。
 
 *为了复现我们在其他基准测试上的结果，我们推荐使用 [LongBench](https://github.com/THUDM/LongBench)、[FastChat](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge) 和 [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) 中的代码来评估 LongBench、MT-Bench 和 Open LLM Leaderboard 中的任务。*
-
-### TODO
-- [ ] Llama 的 packing 训练代码
 
 <a name="citation"></a>
 ## 📝 引用

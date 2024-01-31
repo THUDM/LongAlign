@@ -105,10 +105,12 @@ def train():
             trust_remote_code=True
         )
     else:
-        from LongBench_Chat.llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
-        replace_llama_attn_with_flash_attn()
-        model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path, torch_dtype=torch.bfloat16)
-        tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path)
+        from modeling_llama import LlamaForCausalLM
+        model = LlamaForCausalLM.from_pretrained(model_args.model_name_or_path, 
+                                          torch_dtype=torch.bfloat16, 
+                                          trust_remote_code=True)
+        tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path,
+                                                  trust_remote_code=True)
     if model_args.pack_loss:
         model.pack_loss = True
     data_module = make_supervised_data_module(data_args=data_args)

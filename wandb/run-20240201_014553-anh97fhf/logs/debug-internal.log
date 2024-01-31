@@ -1,0 +1,176 @@
+2024-02-01 01:45:53,318 INFO    StreamThr :471469 [internal.py:wandb_internal():86] W&B internal server running at pid: 471469, started at: 2024-02-01 01:45:53.318136
+2024-02-01 01:45:53,320 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status
+2024-02-01 01:45:53,330 INFO    WriterThread:471469 [datastore.py:open_for_write():87] open: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/run-anh97fhf.wandb
+2024-02-01 01:45:53,330 DEBUG   SenderThread:471469 [sender.py:send():382] send: header
+2024-02-01 01:45:53,706 DEBUG   SenderThread:471469 [sender.py:send():382] send: run
+2024-02-01 01:45:54,613 INFO    SenderThread:471469 [dir_watcher.py:__init__():211] watching files in: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files
+2024-02-01 01:45:54,613 INFO    SenderThread:471469 [sender.py:_start_run_threads():1136] run started: anh97fhf with start time 1706723153.319311
+2024-02-01 01:45:54,629 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: check_version
+2024-02-01 01:45:54,630 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: check_version
+2024-02-01 01:45:56,255 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: run_start
+2024-02-01 01:45:56,274 DEBUG   HandlerThread:471469 [system_info.py:__init__():27] System info init
+2024-02-01 01:45:56,274 DEBUG   HandlerThread:471469 [system_info.py:__init__():42] System info init done
+2024-02-01 01:45:56,274 INFO    HandlerThread:471469 [system_monitor.py:start():194] Starting system monitor
+2024-02-01 01:45:56,275 INFO    SystemMonitor:471469 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-02-01 01:45:56,276 INFO    HandlerThread:471469 [system_monitor.py:probe():214] Collecting system info
+2024-02-01 01:45:56,277 INFO    SystemMonitor:471469 [interfaces.py:start():190] Started cpu monitoring
+2024-02-01 01:45:56,277 INFO    SystemMonitor:471469 [interfaces.py:start():190] Started disk monitoring
+2024-02-01 01:45:56,278 INFO    SystemMonitor:471469 [interfaces.py:start():190] Started gpu monitoring
+2024-02-01 01:45:56,278 INFO    SystemMonitor:471469 [interfaces.py:start():190] Started memory monitoring
+2024-02-01 01:45:56,279 INFO    SystemMonitor:471469 [interfaces.py:start():190] Started network monitoring
+2024-02-01 01:45:56,415 DEBUG   HandlerThread:471469 [system_info.py:probe():151] Probing system
+2024-02-01 01:45:56,424 DEBUG   HandlerThread:471469 [system_info.py:_probe_git():136] Probing git
+2024-02-01 01:45:56,440 DEBUG   HandlerThread:471469 [system_info.py:_probe_git():144] Probing git done
+2024-02-01 01:45:56,440 DEBUG   HandlerThread:471469 [system_info.py:probe():199] Probing system done
+2024-02-01 01:45:56,440 DEBUG   HandlerThread:471469 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-60-generic-x86_64-with-glibc2.10', 'python': '3.8.3', 'heartbeatAt': '2024-01-31T17:45:56.415379', 'startedAt': '2024-01-31T17:45:53.302334', 'docker': None, 'cuda': None, 'args': ('--local_rank=0', '--model_name_or_path', '/mnt/vepfs/users/zjj/models/LongAlign-7B-64k-base', '--train_file', '/mnt/vepfs/users/bys/sft_chatglm/data/llama_old/10k', '--output_dir', './output/llama/pack', '--num_train_epochs', '2', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '1', '--gradient_accumulation_steps', '1', '--remove_unused_columns', 'false', '--save_strategy', 'steps', '--save_steps', '200', '--save_total_limit', '10', '--preprocessing_num_workers', '64', '--learning_rate', '2e-5', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--logging_dir', './logs/', '--deepspeed', 'ds_config/stage3.json', '--bf16', '--gradient_checkpointing', '1', '--adam_beta1', '0.9', '--adam_beta2', '0.95', '--report_to', 'wandb', '--run_name', 'llama_pack', '--logging_steps', '1', '--batch_method', 'pack', '--pack_loss'), 'state': 'running', 'program': 'main.py', 'codePathLocal': 'main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/THUDM/LongAlign.git', 'commit': '3f1458d2034185cdb705e5f0457efd4d552d8422'}, 'email': None, 'root': '/mnt/vepfs/users/zjj/train/LongAlign', 'host': 'node18', 'username': 'zjj', 'executable': '/mnt/vepfs/users/zjj/miniconda3/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 1159.051546875, 'min': 800.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3200.0, 'min': 800.0, 'max': 3400.0}, {'current': 3300.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 900.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3199.997, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3200.0, 'min': 800.0, 'max': 3400.0}, {'current': 2500.0, 'min': 800.0, 'max': 3400.0}, {'current': 3400.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 1200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 2900.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 2200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 3200.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}, {'current': 800.0, 'min': 800.0, 'max': 3400.0}], 'disk': {'/': {'total': 435.667236328125, 'used': 397.6351737976074}}, 'gpu': 'NVIDIA A800-SXM4-80GB', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA A800-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A800-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A800-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A800-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A800-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A800-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A800-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A800-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 2015.5292663574219}}
+2024-02-01 01:45:56,441 INFO    HandlerThread:471469 [system_monitor.py:probe():224] Finished collecting system info
+2024-02-01 01:45:56,441 INFO    HandlerThread:471469 [system_monitor.py:probe():227] Publishing system info
+2024-02-01 01:45:56,441 DEBUG   HandlerThread:471469 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-02-01 01:45:56,616 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/conda-environment.yaml
+2024-02-01 01:45:59,605 DEBUG   HandlerThread:471469 [system_info.py:_save_conda():220] Saving conda packages done
+2024-02-01 01:45:59,608 INFO    HandlerThread:471469 [system_monitor.py:probe():229] Finished publishing system info
+2024-02-01 01:45:59,619 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/conda-environment.yaml
+2024-02-01 01:45:59,619 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/wandb-metadata.json
+2024-02-01 01:45:59,622 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:45:59,624 DEBUG   SenderThread:471469 [sender.py:send():382] send: files
+2024-02-01 01:45:59,624 INFO    SenderThread:471469 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-02-01 01:45:59,632 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: python_packages
+2024-02-01 01:45:59,633 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: python_packages
+2024-02-01 01:45:59,633 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:45:59,634 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:45:59,638 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:46:00,325 DEBUG   SenderThread:471469 [sender.py:send():382] send: telemetry
+2024-02-01 01:46:00,326 DEBUG   SenderThread:471469 [sender.py:send():382] send: config
+2024-02-01 01:46:00,328 DEBUG   SenderThread:471469 [sender.py:send():382] send: metric
+2024-02-01 01:46:00,329 DEBUG   SenderThread:471469 [sender.py:send():382] send: telemetry
+2024-02-01 01:46:00,329 DEBUG   SenderThread:471469 [sender.py:send():382] send: metric
+2024-02-01 01:46:00,329 WARNING SenderThread:471469 [sender.py:send_metric():1354] Seen metric with glob (shouldn't happen)
+2024-02-01 01:46:00,621 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:46:00,621 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/requirements.txt
+2024-02-01 01:46:00,754 INFO    wandb-upload_0:471469 [upload_job.py:push():131] Uploaded file /tmp/tmprxics5ecwandb/ymkzqvft-wandb-metadata.json
+2024-02-01 01:46:02,622 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:46:04,332 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:09,332 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:14,336 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:14,635 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:46:14,635 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:46:14,636 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:46:19,906 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:24,911 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:25,639 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/config.yaml
+2024-02-01 01:46:29,418 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-01 01:46:29,420 DEBUG   SenderThread:471469 [sender.py:send():382] send: metric
+2024-02-01 01:46:29,420 DEBUG   SenderThread:471469 [sender.py:send():382] send: metric
+2024-02-01 01:46:29,420 DEBUG   SenderThread:471469 [sender.py:send():382] send: metric
+2024-02-01 01:46:29,420 DEBUG   SenderThread:471469 [sender.py:send():382] send: history
+2024-02-01 01:46:29,421 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: summary_record
+2024-02-01 01:46:29,427 INFO    SenderThread:471469 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-01 01:46:29,633 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:46:29,634 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:46:29,634 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:46:29,645 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/wandb-summary.json
+2024-02-01 01:46:30,645 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:46:30,903 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:31,646 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:46:35,914 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:40,915 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:44,633 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:46:44,634 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:46:44,673 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:46:46,871 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:51,871 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:56,280 DEBUG   SystemMonitor:471469 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-02-01 01:46:56,283 DEBUG   SenderThread:471469 [sender.py:send():382] send: stats
+2024-02-01 01:46:56,329 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-01 01:46:56,331 DEBUG   SenderThread:471469 [sender.py:send():382] send: history
+2024-02-01 01:46:56,331 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: summary_record
+2024-02-01 01:46:56,335 INFO    SenderThread:471469 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-01 01:46:56,663 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/wandb-summary.json
+2024-02-01 01:46:57,341 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:46:57,663 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:46:58,664 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/config.yaml
+2024-02-01 01:46:58,665 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:46:59,636 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:46:59,637 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:46:59,637 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:47:02,900 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:07,906 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:12,916 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:14,634 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:47:14,635 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:47:14,680 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:47:18,879 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:23,887 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:24,041 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-01 01:47:24,043 DEBUG   SenderThread:471469 [sender.py:send():382] send: history
+2024-02-01 01:47:24,043 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: summary_record
+2024-02-01 01:47:24,047 INFO    SenderThread:471469 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-01 01:47:24,687 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:47:24,687 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/wandb-summary.json
+2024-02-01 01:47:25,687 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:47:26,285 DEBUG   SenderThread:471469 [sender.py:send():382] send: stats
+2024-02-01 01:47:29,293 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:29,634 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:47:29,634 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:47:29,635 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:47:34,914 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:39,921 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:44,634 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:47:44,635 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:47:44,677 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:47:44,962 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:49,966 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:51,498 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-01 01:47:51,499 DEBUG   SenderThread:471469 [sender.py:send():382] send: history
+2024-02-01 01:47:51,499 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: summary_record
+2024-02-01 01:47:51,503 INFO    SenderThread:471469 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-01 01:47:51,719 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/wandb-summary.json
+2024-02-01 01:47:52,719 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:47:53,720 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:47:55,505 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:47:56,288 DEBUG   SenderThread:471469 [sender.py:send():382] send: stats
+2024-02-01 01:47:59,793 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:47:59,794 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:47:59,795 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:48:01,119 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:48:06,120 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:48:11,121 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:48:14,791 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:48:14,792 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:48:14,834 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:48:17,031 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:48:22,032 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:48:26,293 DEBUG   SenderThread:471469 [sender.py:send():382] send: stats
+2024-02-01 01:48:27,296 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:48:29,802 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-01 01:48:29,802 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-01 01:48:29,802 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: stop_status
+2024-02-01 01:48:32,720 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: status_report
+2024-02-01 01:48:32,765 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-01 01:48:32,767 DEBUG   SenderThread:471469 [sender.py:send():382] send: history
+2024-02-01 01:48:32,767 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: summary_record
+2024-02-01 01:48:32,778 INFO    SenderThread:471469 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-01 01:48:33,751 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/output.log
+2024-02-01 01:48:33,752 INFO    Thread-13 :471469 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/vepfs/users/zjj/train/LongAlign/wandb/run-20240201_014553-anh97fhf/files/wandb-summary.json
+2024-02-01 01:48:34,188 DEBUG   SenderThread:471469 [sender.py:send():382] send: exit
+2024-02-01 01:48:34,189 INFO    SenderThread:471469 [sender.py:send_exit():589] handling exit code: 255
+2024-02-01 01:48:34,190 INFO    SenderThread:471469 [sender.py:send_exit():591] handling runtime: 157
+2024-02-01 01:48:34,195 INFO    SenderThread:471469 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-01 01:48:34,195 INFO    SenderThread:471469 [sender.py:send_exit():597] send defer
+2024-02-01 01:48:34,196 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: defer
+2024-02-01 01:48:34,196 INFO    HandlerThread:471469 [handler.py:handle_request_defer():172] handle defer: 0
+2024-02-01 01:48:34,196 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: defer
+2024-02-01 01:48:34,196 INFO    SenderThread:471469 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-02-01 01:48:34,197 INFO    SenderThread:471469 [sender.py:transition_state():617] send defer: 1
+2024-02-01 01:48:34,197 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: defer
+2024-02-01 01:48:34,197 INFO    HandlerThread:471469 [handler.py:handle_request_defer():172] handle defer: 1
+2024-02-01 01:48:34,197 DEBUG   SenderThread:471469 [sender.py:send_request():409] send_request: defer
+2024-02-01 01:48:34,197 INFO    SenderThread:471469 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-02-01 01:48:34,197 INFO    SenderThread:471469 [sender.py:transition_state():617] send defer: 2
+2024-02-01 01:48:34,198 DEBUG   HandlerThread:471469 [handler.py:handle_request():146] handle_request: defer
+2024-02-01 01:48:34,198 INFO    HandlerThread:471469 [handler.py:handle_request_defer():172] handle defer: 2
+2024-02-01 01:48:34,198 INFO    HandlerThread:471469 [system_monitor.py:finish():203] Stopping system monitor
+2024-02-01 01:48:34,198 DEBUG   SystemMonitor:471469 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-02-01 01:48:34,198 DEBUG   SystemMonitor:471469 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-02-01 01:48:34,201 INFO    HandlerThread:471469 [interfaces.py:finish():202] Joined cpu monitor
+2024-02-01 01:48:34,201 INFO    HandlerThread:471469 [interfaces.py:finish():202] Joined disk monitor

@@ -56,7 +56,7 @@ You should set the `--group_size` parameter to the number of GPUs during trainin
 
 We provide training scripts under `scripts/` for the ChatGLM3 and Llama-2 model series. Make sure to adjust `--model_name_or_path`, `--train_file`, and `--output_dir` to match your model path, data path, and output path. You should consider using a base model with at least 64k context window length. We release three **base models** with extended context windows of 64k: [LongAlign-6B-64k-base](https://huggingface.co/THUDM/LongAlign-6B-64k-base), [LongAlign-7B-64k-base](https://huggingface.co/THUDM/LongAlign-7B-64k-base), and [LongAlign-13B-64k-base](https://huggingface.co/THUDM/LongAlign-13B-64k-base).
 
-For packing training, please modify the *attention calculation* to support the 1D attention mask that marks the start and end position of each sequence in the pack, and the *model forward* function to support loss weighting during packing training. An example of such modifications for the ChatGLM3 model is provided in [modeling_chatglm.py](https://github.com/THUDM/LongAlign/blob/main/modeling_chatglm.py), in `CoreAttention.forward` and `ChatGLMForConditionalGeneration.forward`. You can directly use this file as the modeling file for ChatGLM packing training. We will soon also release a patch code for Llama. As suggested in the result our paper, we recommend *packing+loss weighting* for ChatGLM training and *sorted batching* for Llama.
+For packing training, please modify the *attention calculation* to support the 1D attention mask that marks the start and end position of each sequence in the pack, and the *model forward* function to support loss weighting during packing training. An example of such modifications for the ChatGLM3 model is provided in [modeling_chatglm.py](https://github.com/THUDM/LongAlign/blob/main/modeling_chatglm.py), in `CoreAttention.forward` and `ChatGLMForConditionalGeneration.forward`. You can directly use this file as the modeling file for ChatGLM packing training. We also provide the training code for Llama. To reproduce our results, please use [modeling_llama.py](https://github.com/THUDM/LongAlign/blob/main/modeling_llama.py) as the modeling file. As suggested in the result our paper, we recommend *packing+loss weighting* for ChatGLM training and *sorted batching* for Llama.
 
 ### Model deploying
 We have released four **chat models** trained using LongAlign: [LongAlign-6B-64k](https://huggingface.co/THUDM/LongAlign-6B-64k) (based on *ChatGLM3-6B*), [LongAlign-7B-64k](https://huggingface.co/THUDM/LongAlign-7B-64k) (based on *Llama-2-7B*), [LongAlign-13B-64k](https://huggingface.co/THUDM/LongAlign-13B-64k) (based on *Llama-2-13B*), and [ChatGLM3-6B-128k](https://huggingface.co/THUDM/chatglm3-6b-128k). Try the model to summarize our paper, or ask anything about it:
@@ -104,9 +104,6 @@ You are also welcome to submit your model's test predictions or results to us. W
 We also provide the code for evaluating HuggingFace models on the "Needle In A Haystack" test under `Needle_test/`. See its [README.md](https://github.com/THUDM/LongAlign/blob/main/Needle_test/README.md) for more information.
 
 *To reproduce our results on other benchmarks, we refer to the code in [LongBench](https://github.com/THUDM/LongBench), [FastChat](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge), and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) for evaluating on LongBench, MT-Bench, and Open LLM Leaderboard tasks.*
-
-### TODO
-- [ ] Release packing training patch code for Llama
 
 <a name="citation"></a>
 ## 📝 Citation
