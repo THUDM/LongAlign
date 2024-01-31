@@ -97,9 +97,9 @@ def process_file(lines, rank, args):
         final_inputs = torch.zeros((len(lines), max_length), dtype=torch.int64)
         final_labels = torch.zeros((len(lines), max_length), dtype=torch.int64)
         if model == 'chatglm':
-            tokenizer = AutoTokenizer.from_pretrained("/mnt/vepfs/users/bys/fix_models/chatglm2-6b-32k", trust_remote_code=True)
+            tokenizer = AutoTokenizer.from_pretrained("THUDM/LongAlign-6B-64k", trust_remote_code=True)
         else:
-            tokenizer = LlamaTokenizer.from_pretrained("/mnt/vepfs/users/bys/fix_models/Llama-2-7b-64k", trust_remote_code=True)
+            tokenizer = LlamaTokenizer.from_pretrained("THUDM/LongAlign-7B-64k", trust_remote_code=True)
         tokenizer.add_special_tokens({'cls_token': BEGIN_TOKEN})
         tokenizer.add_special_tokens({'sep_token': END_TOKEN})
         BEGIN_ID, END_ID = tokenizer(BEGIN_TOKEN)['input_ids'][-1], tokenizer(END_TOKEN)['input_ids'][-1]

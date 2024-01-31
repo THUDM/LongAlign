@@ -105,7 +105,7 @@ def train():
             trust_remote_code=True
         )
     else:
-        from Chat-LongBench.llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
+        from LongBench_Chat.llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
         replace_llama_attn_with_flash_attn()
         model = AutoModel.from_pretrained(model_args.model_name_or_path, torch_dtype=torch.bfloat16)
         tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path)

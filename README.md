@@ -67,7 +67,7 @@ query = open("assets/paper.txt").read() + "\n\nPlease summarize the paper."
 response, history = model.chat(tokenizer, query, history=[], max_new_tokens=512, temperature=1)
 print(response)
 ```
-For Llama-based models, we also provide a [llama_flash_attn_monkey_patch.py](https://github.com/THUDM/LongAlign/blob/main/LongBench-Chat/llama_flash_attn_monkey_patch.py) for utilization of FlashAttention-2 to save memory for inference on long sequences.
+For Llama-based models, we also provide a [llama_flash_attn_monkey_patch.py](https://github.com/THUDM/LongAlign/blob/main/LongBench_Chat/llama_flash_attn_monkey_patch.py) for utilization of FlashAttention-2 to save memory for inference on long sequences.
 
 ### All available models
 
@@ -85,7 +85,7 @@ Here is the full list of models we released:
 
 <a name="longbench-chat-evaluation"></a>
 ## 📊 LongBench-Chat Evaluation
-LongBench-Chat is the first benchmark for assessing long context alignment, featuring real user queries of 10k-100k in length. The dataset and evaluation code are available under `LongBench-Chat/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator. Run
+LongBench-Chat is the first benchmark for assessing long context alignment, featuring real user queries of 10k-100k in length. The dataset and evaluation code are available under `LongBench_Chat/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator. Run
 ```bash
 python eval.py --model {model_path} --max_length {max_length}
 ```
