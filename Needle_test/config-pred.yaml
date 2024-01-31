@@ -1,0 +1,6 @@
+prompt_dir: 'prompts'
+save_dir: 'pred'
+
+model:
+  model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+  model_name: "THUDM/LongAlign-6B-64k"
