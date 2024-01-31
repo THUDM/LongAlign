@@ -11,7 +11,7 @@ Read this in [English](README.md).
 ## 🔍 目录
 - [⚙️ 数据准备](#data-preparation)
 - [🖥️ LongAlign 训练](#longalign-training)
-- [📊 LongBench-Chat 评估](#longbench-chat-evaluation)
+- [📊 评测](#longbench-chat-evaluation)
 - [📝 引用](#citation)
 
 <a name="data-preparation"></a>
@@ -87,7 +87,9 @@ print(response)
 |**ChatGLM3-6B-128k**| [🤗 HF 仓库](https://huggingface.co/THUDM/chatglm3-6b-128k) | **ChatGLM3-6B** 上下文窗口扩展到 128k|
 
 <a name="longbench-chat-evaluation"></a>
-## 📊 LongBench-Chat 评估
+## 📊 评测
+
+### LongBench-Chat 评测
 LongBench-Chat 是首个用于评估长上下文对齐的基准测试，问题都来源于真实用户提问，测试数据长度在 10k-100k 之间。数据集和评估代码在 `LongBench_Chat/` 下。记得在 `eval.py` 中配置您的 OpenAI API 密钥，因为我们采用 GPT-4 作为评估器。运行
 ```bash
 python eval.py --model {model_path} --max_length {max_length}
@@ -97,6 +99,11 @@ python eval.py --model {model_path} --max_length {max_length}
 ![](assets/leaderboard.png)
 
 我们也欢迎您提交您的模型预测结果或测试结果。我们在计划发布一个更加正式的排行榜。
+
+### 大海捞针试验评测
+我们还提供了在“大海捞针”测试下评估HuggingFace模型的代码，位于`Needle_test/`目录下。有关更多信息，请参阅其 [README.md](https://github.com/THUDM/LongAlign/blob/main/Needle_test/README.md)。
+
+*为了复现我们在其他基准测试上的结果，我们推荐使用 [LongBench](https://github.com/THUDM/LongBench)、[FastChat](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge) 和 [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) 中的代码来评估 LongBench、MT-Bench 和 Open LLM Leaderboard 中的任务。*
 
 <a name="citation"></a>
 ## 📝 引用

@@ -12,7 +12,7 @@
 ## 🔍 Table of Contents
 - [⚙️ Data Preparation](#data-preparation)
 - [🖥️ LongAlign Training](#longalign-training)
-- [📊 LongBench-Chat Evaluation](#longbench-chat-evaluation)
+- [📊 Evaluation](#longbench-chat-evaluation)
 - [📝 Citation](#citation)
 
 <a name="data-preparation"></a>
@@ -87,7 +87,9 @@ Here is the full list of models we released:
 |**ChatGLM3-6B-128k**| [🤗 HF Repo](https://huggingface.co/THUDM/chatglm3-6b-128k) | **ChatGLM3-6B** with a 128k context window|
 
 <a name="longbench-chat-evaluation"></a>
-## 📊 LongBench-Chat Evaluation
+## 📊 Evaluation
+
+### LongBench-Chat evaluation
 LongBench-Chat is the first benchmark for assessing long context alignment, featuring real user queries of 10k-100k in length. The dataset and evaluation code are available under `LongBench_Chat/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator. Run
 ```bash
 python eval.py --model {model_path} --max_length {max_length}
@@ -97,6 +99,11 @@ python eval.py --model {model_path} --max_length {max_length}
 ![](assets/leaderboard.png)
 
 You are also welcome to submit your model's test predictions or results to us. We are planning to release a more formal leaderboard.
+
+### Needle-test evaluation
+We also provide the code for evaluating HuggingFace models on the "Needle In A Haystack" test under `Needle_test/`. See its [README.md](https://github.com/THUDM/LongAlign/blob/main/Needle_test/README.md) for more information.
+
+*To reproduce our results on other benchmarks, we refer to the code in [LongBench](https://github.com/THUDM/LongBench), [FastChat](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge), and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) for evaluating on LongBench, MT-Bench, and Open LLM Leaderboard tasks.*
 
 <a name="citation"></a>
 ## 📝 Citation

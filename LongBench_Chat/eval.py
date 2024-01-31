@@ -1,6 +1,6 @@
 import requests
 import time, os, json
-from transformers import AutoTokenizer, AutoModelForCausalLM, LlamaTokenizer, LlamaForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM
 from transformers.generation.utils import GenerationConfig
 import torch
 import numpy as np
@@ -99,8 +99,6 @@ def load_model_and_tokenizer(path, device):
     valid_path = path.lower()
     if "longchat" in valid_path or "vicuna" in valid_path:
         from fastchat.model import load_model
-        from llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
-        replace_llama_attn_with_flash_attn()
         model, _ = load_model(path, device='cpu', num_gpus=0, load_8bit=False, cpu_offloading=False, debug=False)
         model = model.to(device)
         model = model.bfloat16()
