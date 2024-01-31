@@ -1,7 +1,7 @@
 # LongAlign: A Recipe for Long Context Alignment of LLMs
 
 <p align="center">
-    🤗 <a href="https://huggingface.co/datasets/THUDM/LongAlign-10k" target="_blank">HF 仓库</a> • 📃 <a href="https://arxiv.org/" target="_blank">论文</a>
+    🤗 <a href="https://huggingface.co/datasets/THUDM/LongAlign-10k" target="_blank">HF 仓库</a> • 📃 <a href="https://github.com/THUDM/LongAlign/blob/main/assets/LongAlign.pdf" target="_blank">论文</a>
 </p>
 
 Read this in [English](README.md).
