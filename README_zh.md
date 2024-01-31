@@ -105,6 +105,9 @@ python eval.py --model {model_path} --max_length {max_length}
 
 *为了复现我们在其他基准测试上的结果，我们推荐使用 [LongBench](https://github.com/THUDM/LongBench)、[FastChat](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge) 和 [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) 中的代码来评估 LongBench、MT-Bench 和 Open LLM Leaderboard 中的任务。*
 
+### TODO
+- [ ] Llama 的 packing 训练代码
+
 <a name="citation"></a>
 ## 📝 引用
 

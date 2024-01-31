@@ -105,6 +105,9 @@ We also provide the code for evaluating HuggingFace models on the "Needle In A H
 
 *To reproduce our results on other benchmarks, we refer to the code in [LongBench](https://github.com/THUDM/LongBench), [FastChat](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge), and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) for evaluating on LongBench, MT-Bench, and Open LLM Leaderboard tasks.*
 
+### TODO
+- [ ] Release packing training patch code for Llama
+
 <a name="citation"></a>
 ## 📝 Citation
 
