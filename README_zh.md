@@ -1,4 +1,4 @@
-# LongAlign: A Thorough Recipe for Long Context Alignment
+# LongAlign: A Recipe for Long Context Alignment of LLMs
 
 <p align="center">
     🤗 <a href="https://huggingface.co/datasets/THUDM/LongAlign-10k" target="_blank">HF 仓库</a> • 📃 <a href="https://arxiv.org/" target="_blank">论文</a>

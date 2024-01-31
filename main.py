@@ -5,7 +5,7 @@ from typing import Optional, Dict, Sequence, List
 import os
 import torch
 import transformers
-from transformers import AutoTokenizer, AutoModel
+from transformers import AutoTokenizer, AutoModelForCausalLM
 from dataset import LMDataset, LMSortDataset, LMPackDataset
 from trainer import TrainerNoShuffle
 
@@ -95,7 +95,7 @@ def train():
     parser = transformers.HfArgumentParser((ModelArguments, DataArguments, TrainingArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
     if "chatglm" in model_args.model_name_or_path.lower() or "longalign-6b" in model_args.model_name_or_path.lower():
-        model = AutoModel.from_pretrained(
+        model = AutoModelForCausalLM.from_pretrained(
             model_args.model_name_or_path,
             torch_dtype=torch.bfloat16,
             trust_remote_code=True, empty_init=False
@@ -107,7 +107,7 @@ def train():
     else:
         from LongBench_Chat.llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
         replace_llama_attn_with_flash_attn()
-        model = AutoModel.from_pretrained(model_args.model_name_or_path, torch_dtype=torch.bfloat16)
+        model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path, torch_dtype=torch.bfloat16)
         tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path)
     if model_args.pack_loss:
         model.pack_loss = True
