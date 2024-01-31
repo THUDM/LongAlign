@@ -6,7 +6,6 @@ deepspeed --include localhost:0,1,2,3,4,5,6,7 main.py \
 --per_device_train_batch_size 1 \
 --per_device_eval_batch_size 1 \
 --gradient_accumulation_steps 1 \
---remove_unused_columns false \
 --save_strategy "steps" \
 --save_steps 200 \
 --save_total_limit 10 \
