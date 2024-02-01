@@ -111,5 +111,10 @@ We also provide the code for evaluating HuggingFace models on the "Needle In A H
 If you find our work useful, please consider citing LongAlign:
 
 ```
-
+@article{bai2024longalign,
+  title={LongAlign: A Recipe for Long Context Alignment of Large Language Models},
+  author={Yushi Bai, Xin Lv, Jiajie Zhang, Yuze He, Ji Qi, Lei Hou, Jie Tang, Yuxiao Dong, Juanzi Li},
+  journal={arXiv preprint arXiv:2401.18058},
+  year={2024}
+}
 ```
