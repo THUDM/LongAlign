@@ -7,7 +7,7 @@
 
 阅读[中文](README_zh.md)版本
 
-**LongAlign** is the first full recipe for LLM alignment on long context. We propose the **LongAlign-10k** dataset, containing 10,000 long instruction data of 8k-64k in length. We investigate on trianing strategies, namely **packing (with loss weighting) and sorted batching**, which are all implemented in our code. For real-world long context evaluation, we introduce **LongBench-Chat** that evaluates the instruction-following capability on queries of 10k-100k length.
+**LongAlign** is the first full recipe for LLM alignment on long context. We propose the **LongAlign-10k** dataset, containing 10,000 long instruction data of 8k-64k in length. We investigate on training strategies, namely **packing (with loss weighting) and sorted batching**, which are all implemented in our code. For real-world long context evaluation, we introduce **LongBench-Chat** that evaluates the instruction-following capability on queries of 10k-100k length.
 
 ## 🔍 Table of Contents
 - [⚙️ Data Preparation](#data-preparation)
