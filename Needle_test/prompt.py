@@ -102,7 +102,7 @@ class Prompter:
         elif self.tokenizer_type == "Anthropic":
             self.enc = Anthropic().get_tokenizer()
         elif self.tokenizer_type == "Huggingface":
-            self.enc = AutoTokenizer.from_pretrained(self.model_name, trust_remote_code=True)
+            self.enc = AutoTokenizer.from_pretrained(self.model_name, trust_remote_code=True, use_fast=False)
         else:
             raise ValueError("tokenizer_type is not supported. Must be either 'tiktoken', 'Anthropic', or 'Huggingface'")
         
