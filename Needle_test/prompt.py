@@ -5,7 +5,6 @@ import glob
 import json
 import yaml
 from anthropic import Anthropic
-from dotenv import load_dotenv
 import numpy as np
 import asyncio
 from asyncio import Semaphore
