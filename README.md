@@ -76,15 +76,15 @@ For Llama-based models, we also provide a [llama_flash_attn_monkey_patch.py](htt
 
 Here is the full list of models we released:
 
-|Model|HF Repo|Description|
-|---|---|---|
-|**LongAlign-6B-64k-base**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-6B-64k-base) | **ChatGLM3-6B** with an extended 64k context window |
-|**LongAlign-6B-64k**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-6B-64k) | Chat model by LongAlign training on LongAlign-6B-64k-base|
-|**LongAlign-7B-64k-base**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-7B-64k-base) | **Llama-2-7B** with an extended 64k context window |
-|**LongAlign-7B-64k**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-7B-64k) | Chat model by LongAlign training on LongAlign-7B-64k-base|
-|**LongAlign-13B-64k-base**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-13B-64k-base) | **Llama-2-13B** with an extended 64k context window |
-|**LongAlign-13B-64k**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-13B-64k) | Chat model by LongAlign training on LongAlign-13B-64k-base|
-|**ChatGLM3-6B-128k**| [🤗 HF Repo](https://huggingface.co/THUDM/chatglm3-6b-128k) | **ChatGLM3-6B** with a 128k context window|
+|Model|HF Repo|OpenXLab Repo|Description|
+|---|---|---|---|
+|**LongAlign-6B-64k-base**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-6B-64k-base) | [🧰 OpenXLab Repo](https://openxlab.org.cn/models/detail/THUDM/LongAlign-6B-64k-base) | **ChatGLM3-6B** with an extended 64k context window |
+|**LongAlign-6B-64k**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-6B-64k) | [🧰 OpenXLab Repo](https://openxlab.org.cn/models/detail/THUDM/LongAlign-6B-64k) | Chat model by LongAlign training on LongAlign-6B-64k-base|
+|**LongAlign-7B-64k-base**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-7B-64k-base) | [🧰 OpenXLab Repo](https://openxlab.org.cn/models/detail/THUDM/LongAlign-7B-64k-base) | **Llama-2-7B** with an extended 64k context window |
+|**LongAlign-7B-64k**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-7B-64k) | [🧰 OpenXLab Repo](https://openxlab.org.cn/models/detail/THUDM/LongAlign-7B-64k) | Chat model by LongAlign training on LongAlign-7B-64k-base|
+|**LongAlign-13B-64k-base**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-13B-64k-base) | [🧰 OpenXLab Repo](https://openxlab.org.cn/models/detail/THUDM/LongAlign-13B-64k-base) | **Llama-2-13B** with an extended 64k context window |
+|**LongAlign-13B-64k**| [🤗 HF Repo](https://huggingface.co/THUDM/LongAlign-13B-64k)  | [🧰 OpenXLab Repo](https://openxlab.org.cn/models/detail/THUDM/LongAlign-13B-64k) | Chat model by LongAlign training on LongAlign-13B-64k-base|
+|**ChatGLM3-6B-128k**| [🤗 HF Repo](https://huggingface.co/THUDM/chatglm3-6b-128k) | [🧰 OpenXLab Repo](https://openxlab.org.cn/models/detail/THUDM/chatglm3-6b-128k) | **ChatGLM3-6B** with a 128k context window|
 
 <a name="longbench-chat-evaluation"></a>
 ## 📊 Evaluation
