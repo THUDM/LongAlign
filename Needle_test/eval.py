@@ -5,6 +5,7 @@ import re
 
 import time
 import requests
+from tqdm import tqdm
 
 api_key = '' # Enter your openai api key here
 
@@ -16,7 +17,7 @@ def pred_openai(model_name, msg):
             headers = {
                 'Authorization': f"Bearer {api_key}"
             }
-            resp = requests.post("https://api.openai.com/v1/chat/completions", json = {
+            resp = requests.post("https://api2.road2all.com/v1/chat/completions", json = {
                 "model": model_name,
                 "messages": msg,
                 "temperature": 0.
@@ -84,7 +85,7 @@ if __name__ == '__main__':
 
     result_dict = {}
 
-    for filename in os.listdir(pred_dir):
+    for filename in tqdm(os.listdir(pred_dir)):
         if not filename.endswith('.txt'):
             continue
 

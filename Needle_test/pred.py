@@ -4,6 +4,7 @@ import glob
 import json
 import time
 import torch
+from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from transformers.generation.utils import GenerationConfig
 from llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
@@ -56,7 +57,7 @@ def load_model_and_tokenizer(path, device):
         model.generation_config = GenerationConfig.from_pretrained(path)
     else:
         tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
-        model = AutoModelForCausalLM.from_pretrained(path, trust_remote_code=True, torch_dtype=torch.bfloat16, device_map="auto")
+        model = AutoModelForCausalLM.from_pretrained(path, trust_remote_code=True, use_flash_attention_2=True, torch_dtype=torch.bfloat16, device_map="auto")
     model = model.eval()
     return model, tokenizer
 
@@ -76,7 +77,7 @@ if __name__ == '__main__':
 
     model, tokenizer = load_model_and_tokenizer(model_name, device)
 
-    for filename in glob.glob(f'{prompt_dir}/{model_provider}_*_prompts.json'):
+    for filename in tqdm(glob.glob(f'{prompt_dir}/{model_provider}_*_prompts.json')):
         with open(filename, 'r') as f:
             prompts = json.load(f)
 
